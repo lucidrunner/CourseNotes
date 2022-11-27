@@ -1,0 +1,41 @@
+﻿<Window x:Class="CourseNotes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseNotes"
+        xmlns:localControls="clr-namespace:CourseNotes.UserControls"
+        mc:Ignorable="d"
+        Title="Course Notes" MinHeight="600" MinWidth="850" SizeToContent="WidthAndHeight">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" BorderBrush="LightGray" BorderThickness="0,1">
+            <MenuItem Header="File">
+                <MenuItem Header="Load" Click="Load_OnClick"/>
+                <Separator/>
+                <MenuItem Header="Save" Click="Save_OnClick"/>
+                <MenuItem Header="Save To Folder" Click="SaveAs_OnClick"/>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.55*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <localControls:CoursesControl x:Name="CoursesControl" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+            <localControls:SearchControl x:Name="SearchControl" Grid.Row="2" Grid.Column="0" />
+            <localControls:NotesControl x:Name="NotesControl" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"/>
+            <localControls:AddControl x:Name="AddControl" Grid.Row="2" Grid.Column="1" />
+            <localControls:ViewControl x:Name="ViewControl" Grid.Row="0" Grid.Column="2"/>
+            <localControls:PrintControl x:Name="PrintControl" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"/>
+        </Grid>
+
+    </DockPanel>
+</Window>

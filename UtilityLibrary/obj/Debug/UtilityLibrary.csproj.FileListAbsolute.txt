@@ -1,0 +1,5 @@
+C:\Users\Bessy\source\repos\HomeMediaPlayer\UtilityLibrary\bin\Debug\UtilityLibrary.dll
+C:\Users\Bessy\source\repos\HomeMediaPlayer\UtilityLibrary\bin\Debug\UtilityLibrary.pdb
+C:\Users\Bessy\source\repos\HomeMediaPlayer\UtilityLibrary\obj\Debug\UtilityLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Bessy\source\repos\HomeMediaPlayer\UtilityLibrary\obj\Debug\UtilityLibrary.dll
+C:\Users\Bessy\source\repos\HomeMediaPlayer\UtilityLibrary\obj\Debug\UtilityLibrary.pdb

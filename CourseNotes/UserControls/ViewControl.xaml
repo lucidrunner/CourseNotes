@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="CourseNotes.UserControls.ViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CourseNotes.UserControls"
+             xmlns:customCommands="clr-namespace:CourseNotes.Commands"
+             mc:Ignorable="d" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Background="LavenderBlush">
+    <UserControl.CommandBindings>
+        <CommandBinding Command="customCommands:CustomCommands.CopyLink" CanExecute="Copy_OnCanExecute" Executed="Copy_OnExecuted"></CommandBinding>
+        <CommandBinding Command="Print" CanExecute="Print_OnCanExecute" Executed="Print_OnExecuted"></CommandBinding>
+    </UserControl.CommandBindings>
+    <GroupBox Header="View">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="ViewTextBox" IsReadOnly="True" Margin="5,10" MinLines="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" TextWrapping="Wrap"/>
+            <Button Content="Copy Timestamp" Command="customCommands:CustomCommands.CopyLink" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <Button Content="Add to Print" Command="Print" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        </Grid>
+    </GroupBox>
+</UserControl>

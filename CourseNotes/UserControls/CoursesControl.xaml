@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="CourseNotes.UserControls.CoursesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CourseNotes.UserControls"
+             xmlns:genericControls="clr-namespace:GenericControls;assembly=GenericControls"
+             xmlns:customCommands="clr-namespace:CourseNotes.Commands"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="LavenderBlush">
+    <UserControl.CommandBindings>
+        <CommandBinding Command="customCommands:CustomCommands.CreateCourse" Executed="CourseCreation_OnExecuted"/>
+        <CommandBinding Command="customCommands:CustomCommands.CopyLink" CanExecute="CopyLink_OnCanExecute" Executed="CopyLink_OnExecuted"/>
+    </UserControl.CommandBindings>
+    <GroupBox Header="Courses">
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="New" Grid.ColumnSpan="2">
+                <StackPanel Orientation="Vertical">
+                    <genericControls:InputField Label="Name" x:Name="NameInput"/>
+                    <genericControls:InputField Label="Link" x:Name="LinkInput"/>
+                    <genericControls:InputField Label="Modules (delimiter ';') " x:Name="ModulesInput"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Content="Clear" Click="ClearButton_OnClick"  Margin="5"/>
+                        <Button Content="Create" Command="customCommands:CustomCommands.CreateCourse" Grid.Column="1" Margin="5"/>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Course" Grid.Row="1" Grid.Column="0">
+                    <ListBox x:Name ="CourseList"  SelectionChanged="Courses_OnSelectionChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </GroupBox>
+
+
+
+            <GroupBox Header="Module" Grid.Row="1" Grid.Column="1">
+                <ListBox x:Name="ModuleList" SelectionChanged="Modules_OnSelectionChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </GroupBox>
+
+            <Button Content="Copy Link" Command="customCommands:CustomCommands.CopyLink" Grid.Row="2" Grid.Column="0" Margin="5,2, 5, 6"/>
+            <genericControls:LabeledCheckBox x:Name="MultiSelectCheckbox" Label="Allow MultiSelect" Grid.Row="2" Grid.Column="1"/>
+
+        </Grid>
+    </GroupBox>
+</UserControl>

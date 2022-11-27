@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CourseNotes>
+	<Tags>
+		<Tag Id="0">c#</Tag>
+		<Tag Id="1">b</Tag>
+		<Tag Id="2">etc</Tag>
+		<Tag Id="3">othertags</Tag>
+		<Tag Id="4">taggy</Tag>
+		<Tag Id="5">courses</Tag>
+		<Tag Id="6">custom names</Tag>
+		<Tag Id="7">notes</Tag>
+		<Tag Id="8">modules</Tag>
+		<Tag Id="9">wpf</Tag>
+		<Tag Id="10">bugs</Tag>
+		<Tag Id="11">note</Tag>
+		<Tag Id="12">tags</Tag>
+		<Tag Id="13">program structure</Tag>
+		<Tag Id="14">architecture</Tag>
+		<Tag Id="15">structure</Tag>
+	</Tags>
+	<Courses>
+		<Course Id="0" Link="">Course 1</Course>
+		<Course Id="1" Link="www.thiscoursehasalink.com">Course 2</Course>
+		<Course Id="2" Link="">Course 3</Course>
+	</Courses>
+	<Modules>
+		<Module Id="0" ParentId="0">Module 1</Module>
+		<Module Id="1" ParentId="0">Module 2</Module>
+		<Module Id="2" ParentId="1">Moment 1</Module>
+		<Module Id="3" ParentId="1">Moment 2</Module>
+		<Module Id="4" ParentId="1">Moment 3</Module>
+		<Module Id="5" ParentId="2">Custom Module 1</Module>
+		<Module Id="6" ParentId="2">Quiz 1</Module>
+		<Module Id="7" ParentId="2">Moment 3</Module>
+		<Module Id="8" ParentId="2">Quiz 2</Module>
+	</Modules>
+	<Notes>
+		<Note Id="0" ParentId="5" ChildrenId="0;1;2" Link="www.courselink.com/timestamp">This is a note on custom module 1 on Course 3.</Note>
+		<Note Id="1" ParentId="6" ChildrenId="0;3;4" Link="">This is a note on Quiz 1 on Course 3</Note>
+		<Note Id="2" ParentId="7" ChildrenId="5;6" Link="">Courses can have custom Module names, Course 3's modules were created by inputting Custom Module 1; Quiz 1; Moment 3; Quiz 2</Note>
+		<Note Id="3" ParentId="8" ChildrenId="7;5" Link="">I tried to make sure all modules in this file had notes just for testing purposes</Note>
+		<Note Id="4" ParentId="2" ChildrenId="5;8" Link="www.timestamp.com/course">Course 2's Modules are named moments. This was made by inputting 3;Moment - giving a number of desired modules and a custom name to them</Note>
+		<Note Id="5" ParentId="3" ChildrenId="0;9;10" Link="">Some minor WPF oddities observed during this: Before we manually resize at least once (but sometimes 2-3 times) we automatically resize width by writing in the Add/Note window despite it being set to wrap.</Note>
+		<Note Id="6" ParentId="4" ChildrenId="0;9;10" Link="">Another similar wpf oddity is Course / Modules resizing height until we manually resize height. </Note>
+		<Note Id="7" ParentId="0" ChildrenId="11;12" Link="">This is the first note on Course 1. Notes can have tags and timestamp links (good for youtube videos)</Note>
+		<Note Id="8" ParentId="1" ChildrenId="13;14" Link="">I went a bit overboard on the func / actions, so the library does a lot of the heavy lifting when it comes to linking components together, eg a note that you select for viewing is automatically (attempted at least) passed to the View implementer. </Note>
+		<Note Id="9" ParentId="1" ChildrenId="15;14" Link="">I didn't add too much functionality though, and the functionality present atm is pretty harmonious. If we, for example, had more removes we'd have to start doing a lot more cleanup in the repository than we do atm.</Note>
+		<Note Id="10" ParentId="1" ChildrenId="15" Link="">Considering I let the library do a ton of work I did do a pretty backwards way of filling, rather than controls requesting themself to be filled the library calls an action / func and lets the control handle the passed though collection. It would have been a bit easier to just give each display a Fill action they themselves could have called.</Note>
+	</Notes>
+</CourseNotes>
